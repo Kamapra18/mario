@@ -1,3 +1,4 @@
+
 export default function Footer() {
     return (
         <footer className="bg-white py-10 px-4 md:px-10">
@@ -16,11 +17,11 @@ export default function Footer() {
                 <input
                 type="email"
                 placeholder="Enter your email address"
-                className="border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F03328] w-64"
+                className="relative z-10 border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F03328] w-64"
                 />
                 <button
                 type="submit"
-                className="bg-[#F03328] text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center gap-2 transition-colors duration-300"
+                className="relative z-10 bg-[#F03328] text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center gap-2 transition-colors duration-300"
                 >
                     Subscribe
                 </button>
