@@ -29,14 +29,14 @@ export default function NavbarSection() {
 				key={item.href}
 				href={item.href}
 				className={`group text-[1.1rem] capitalize ${
-				item.active ? "text-[#F03328]" : "text-[#3a3a3a]"
+				item.active ? "text-[#F03328]" : "text-[#3a3a3a] hover:text-[#F03328]"
 				} font-medium`}
 			>
 				{item.label}
 				<span
 				className={`block w-8 h-0.5 mt-1 mx-auto transition-all duration-300 ${
 					item.active
-					? "bg-[#F03328] opacity-100 scale-x-100"
+					? "bg-[#F03328] opacity-100 scale-x-100 group-hover:scale-x-0 group-hover:opacity-0"
 					: "bg-[#F03328] opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
 				}`}
 				></span>
@@ -65,25 +65,25 @@ export default function NavbarSection() {
 		{/* Mobile Menu */}
 		{isOpen && (
 			<div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-6 md:hidden z-[100]">
-			{menuItems.map((item) => (
+				{menuItems.map((item) => (
 				<a
-				key={item.href}
-				href={item.href}
-				className={`text-[1.2rem] capitalize ${
-					item.active ? "text-[#F03328]" : "text-[#3a3a3a]"
-				}`}
+					key={item.href}
+					href={item.href}
+					className={`text-[1.2rem] capitalize font-medium transition-colors duration-300 ${
+					item.active ? "text-[#F03328]" : "text-[#3a3a3a] hover:text-[#F03328]"
+					}`}
 				>
-				{item.label}
+					{item.label}
 				</a>
-			))}
-			<a
+				))}
+				<a
 				href="#"
 				className="border-2 border-[#F03328] px-6 py-2 rounded-2xl font-bold text-[#F03328] capitalize transition-all duration-300 ease-in-out hover:bg-[#F03328] hover:text-white"
-			>
+				>
 				login
-			</a>
+				</a>
 			</div>
-		)}
+			)}
 		</header>
 	);
 }
