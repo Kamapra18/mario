@@ -17,7 +17,7 @@ export default function NavbarSection() {
 	return (
 		<header className="flex justify-between items-center py-4 px-6 md:px-20">
 		<div className="flex items-center">
-			<Image src="/logo.png" alt="logo" width={30} height={20} />
+			<Image src="/logo.png" alt="Foodie logo" width={30} height={20} />
 			<a href="#" className="text-[#F03328] font-bold text-2xl ml-2">
 			Foo<span className="text-[#FF9E0C]">die</span>
 			</a>

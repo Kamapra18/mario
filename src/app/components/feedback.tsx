@@ -10,9 +10,7 @@ export default function CustomerFeedback() {
             <h2 className="text-3xl md:text-4xl font-bold">
                 Customer <span className="text-red-500">Feedback</span>
             </h2>
-            <p className="mt-4 text-gray-700 leading-relaxed">
-                I recently dined at your restaurant and wanted to share my experience. The food was absolutely delicious, and I was impressed by the freshness of the ingredients. Each dish was bursting with flavor, and the portion sizes were perfect. The service was quick and efficient, and the staff was incredibly friendly and welcoming.
-            </p>
+            {/* Memanggil komponen Testimonial yang sudah mencakup feedback dinamis */}
             <Testimonial />
             </div>
 

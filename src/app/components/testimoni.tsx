@@ -1,86 +1,74 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { useSwipeable } from "react-swipeable";
 
 const testimonials = [
     {
         name: "Azazzel",
-        role: "Product Manager",
+        role: "Food Blogger",
         image: "/user2.jpeg",
+        feedback:
+        "I recently dined at your restaurant and wanted to share my experience. The food was absolutely delicious, and I was impressed by the freshness of the ingredients. Each dish was bursting with flavor, and the portion sizes were perfect. The service was quick and efficient, and the staff was incredibly friendly and welcoming.",
     },
     {
         name: "Tayyab Sohail",
-        role: "UX/UI Designer",
+        role: "Food Critic",
         image: "/user.png",
+        feedback:
+        "My dining experience at your restaurant was truly satisfying. From start to finish, everything felt special. We tried a few appetizers and main courses, and they all tasted fresh and of high quality. The flavors of each component of the dishes were so well-balanced and left a lasting impression. Not only was the food exceptional, but the hospitality and professionalism of the entire staff were also commendable. They were very helpful in providing recommendations and ensuring all our needs were met. This restaurant is truly a culinary gem!",
     },
     {
-        name: "Mario Prayoga",
-        role: "Software Engineer",
-        image: "/mario23.jpg",
+        name: "Michael Lee",
+        role: "Office Employee",
+        image: "/user3.png",
+        feedback:
+        "I was thoroughly impressed with my dining experience at your restaurant last week. The ambiance of the place was so cozy and inviting, perfect for relaxing while enjoying a delicious meal. I ordered the [dish name], and it was absolutely outstanding! The texture was just right, the seasoning was perfectly infused, and the presentation was beautiful. On top of that, the server who attended our table was very attentive and friendly, making our dining experience even more enjoyable. I will definitely be coming back!",
     },
     ];
 
     const Testimonial = () => {
     const [selected, setSelected] = useState(0);
 
-    // Auto slide every 3s on small screen
-    useEffect(() => {
-        const isMobile = window.innerWidth < 768;
-        if (!isMobile) return;
-
-        const interval = setInterval(() => {
-        setSelected((prev) => (prev + 1) % testimonials.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    // Gesture swipe (optional)
-    const handlers = useSwipeable({
-        onSwipedLeft: () =>
-        setSelected((prev) => (prev + 1) % testimonials.length),
-        onSwipedRight: () =>
-        setSelected((prev) => (prev - 1 + testimonials.length) % testimonials.length),
-        preventScrollOnSwipe: true,
-        trackMouse: true,
-    });
-
     return (
-        <div
-        {...handlers}
-        className="flex justify-between items-center mt-10 md:flex-row"
-        >
-        <div className="flex items-center gap-4">
+        <div>
+        {/* Feedback Testimonial yang akan berubah */}
+        <p className="mt-4 text-gray-700 leading-relaxed">
+            {testimonials[selected].feedback}
+        </p>
+
+        {/* Bagian Profil dan Navigasi */}
+        <div className="flex justify-between mt-10">
+            {/* Informasi User */}
+            <div className="flex items-center gap-4">
             <Image
-            src={testimonials[selected].image}
-            alt="customer"
-            width={50}
-            height={50}
-            className="rounded-full"
+                src={testimonials[selected].image}
+                alt="customer"
+                width={50}
+                height={50}
+                className="rounded-full"
             />
             <div>
-            <h3 className="text-lg font-semibold text-red-600">
+                <h3 className="text-lg font-semibold text-red-600">
                 {testimonials[selected].name}
-            </h3>
-            <h4 className="text-sm inline-block">
+                </h3>
+                <h4 className="text-sm inline-block">
                 {testimonials[selected].role}
-            </h4>
+                </h4>
             </div>
-        </div>
+            </div>
 
-        <div className="flex mt-4 md:mt-0 gap-2">
+            {/* Navigation Dots */}
+            <div className="flex mt-4 gap-2">
             {testimonials.map((_, index) => (
-            <button
+                <button
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                selected === index
-                    ? "bg-red-500"
-                    : "border border-red-500"
+                    selected === index ? "bg-red-500" : "border border-red-500"
                 }`}
                 onClick={() => setSelected(index)}
-            ></button>
+                ></button>
             ))}
+            </div>
         </div>
         </div>
     );
