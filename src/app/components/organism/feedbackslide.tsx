@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const testimonials = [
+const FeedbackData = [
     {
         name: "Azazzel",
         role: "Food Blogger",
@@ -26,14 +26,14 @@ const testimonials = [
     },
     ];
 
-    const Testimonial = () => {
+    const FeedbackSlide = () => {
     const [selected, setSelected] = useState(0);
 
     return (
         <div>
         {/* Feedback Testimonial yang akan berubah */}
         <p className="mt-4 text-gray-700 leading-relaxed">
-            {testimonials[selected].feedback}
+            {FeedbackData[selected].feedback}
         </p>
 
         {/* Bagian Profil dan Navigasi */}
@@ -41,7 +41,7 @@ const testimonials = [
             {/* Informasi User */}
             <div className="flex items-center gap-4">
             <Image
-                src={testimonials[selected].image}
+                src={FeedbackData[selected].image}
                 alt="customer"
                 width={50}
                 height={50}
@@ -49,17 +49,17 @@ const testimonials = [
             />
             <div>
                 <h3 className="text-lg font-semibold text-red-600">
-                {testimonials[selected].name}
+                {FeedbackData[selected].name}
                 </h3>
                 <h4 className="text-sm inline-block">
-                {testimonials[selected].role}
+                {FeedbackData[selected].role}
                 </h4>
             </div>
             </div>
 
             {/* Navigation Dots */}
             <div className="flex mt-4 gap-2">
-            {testimonials.map((_, index) => (
+            {FeedbackData.map((_, index) => (
                 <button
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
@@ -74,4 +74,4 @@ const testimonials = [
     );
 };
 
-export default Testimonial;
+export default FeedbackSlide;

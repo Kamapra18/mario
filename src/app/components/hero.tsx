@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "./atom/button";
 
 export default function Hero() {
     return (
@@ -23,12 +24,7 @@ export default function Hero() {
                 grains.
             </p>
 
-            <a
-            href="#"
-            className="inline-block bg-[#F03328] px-5 py-3 text-white rounded-2xl capitalize hover:bg-red-700 transition-colors duration-300"
-            >
-                order now
-            </a>
+            <Button className="mt-4">Order Now</Button>
         </main>
 
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">

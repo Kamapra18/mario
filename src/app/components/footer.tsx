@@ -1,3 +1,5 @@
+import Button from "./atom/button";
+import SectionTitle from "./atom/title";
 
 export default function Footer() {
     return (
@@ -6,9 +8,9 @@ export default function Footer() {
             {/* Bagian Newsletter */}
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-                <h1 className="capitalize text-3xl font-bold">
+                <SectionTitle>
                     Join Our <span className="text-[#F03328]">Newsletter</span>
-                </h1>
+                </SectionTitle>
                 <p className="text-gray-600 mt-2">
                     Be the first to know about our latest updates, exclusive offers, and more.
                 </p>
@@ -19,12 +21,9 @@ export default function Footer() {
                 placeholder="Enter your email address"
                 className="relative z-10 border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F03328] w-64"
                 />
-                <button
-                type="submit"
-                className="relative z-10 bg-[#F03328] text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center gap-2 transition-colors duration-300"
-                >
+                <Button className="relative z-10 bg-[#F03328] text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center gap-2 transition-colors duration-300">
                     Subscribe
-                </button>
+                </Button>
             </form>
             </div>
 
