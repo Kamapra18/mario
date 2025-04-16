@@ -1,3 +1,4 @@
+"use client";
 import SectionTitle from "../atom/title";
 import MenuList from "../organism/menulist";
 

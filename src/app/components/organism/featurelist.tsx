@@ -1,4 +1,3 @@
-// components/organism/FeatureList.tsx
 import Image from "next/image";
 
 type Feature = {
